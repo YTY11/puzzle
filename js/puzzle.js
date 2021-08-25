@@ -186,10 +186,10 @@ function successGame() {
   if (gameOld.toString() == gameStart.toString()) {
     closeTimer()//关闭定时器
     //设置过关提示
-    document.getElementById("passCount").innerHTML = count
-    document.getElementById("passTime").innerHTML = time
+    document.getElementById("passCount").innerHTML = '总步数: ' + count
+    document.getElementById("passTime").innerHTML = '用时: ' + time + '秒'
     document.querySelector(".pass").style.display = 'block'//显示模态框
-    pass
+    
   }
 }
 
@@ -244,10 +244,7 @@ function startGame() {
       let div = document.getElementById('div' + j)
       // 在可移动范围打乱顺序防止无法复原问题
       Blank(div.offsetLeft, div.offsetTop, div, true)
-
     }
-
-
   }
   for (let index = 0; index < ids.length; index++) {
     gameOld.push(ids[index].id)
